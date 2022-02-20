@@ -22,10 +22,25 @@ function Square(props) {
     }
   
     render() {
+        const rows = ()=>{
+            for (let i=0;i<9;i+=3){
+                for (let j=0;i<3;j++){
+                    return (
+                        <div className = "board-row">
+                        {this.renderSquare(j+i)}
+                        </div>
+                    )
+
+
+            }
+        }
+        console.log(rows)
+    }
       return (
         <div>
           {/* <div className="status">{status}</div> */}
-          <div className="board-row">
+          {rows}
+          {/* <div className="board-row">
             {this.renderSquare(0)}
             {this.renderSquare(1)}
             {this.renderSquare(2)}
@@ -39,7 +54,7 @@ function Square(props) {
             {this.renderSquare(6)}
             {this.renderSquare(7)}
             {this.renderSquare(8)}
-          </div>
+          </div> */}
         </div>
       );
     }
